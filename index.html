@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find homes on Airbnb</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            position: relative;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        nav {
+            display: flex;
+            margin: 0 50px 0 50px;
+            height: 70px;
+            padding: 10px 0 0 50px;
+            border-bottom: 0.1px solid rgb(0, 0, 0, 0.1);
+        }
+
+        form {
+            position: absolute;
+            width: 365px;
+            border-radius: 15px;
+            padding: 30px 30px;
+            font-size: 15px;
+            margin: 80px 0 0 125px;
+            background-color: white;
+            box-shadow: 0px 5px 10px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            margin: 0;
+            padding: 0;
+            font-weight: bold;
+        }
+
+        p {
+            padding-top: 0;
+            margin-top: 5px;
+            color: gray;
+        }
+
+        hr {
+            margin: 10px;
+        }
+
+        input {
+            border: none;
+            padding: 5px 0;
+            font-size: 15px;
+            width: 100%;
+        }
+
+        #logo-img {
+            height: 35px;
+            margin: 5px;
+            margin-bottom: 0;
+            margin-right: 0;
+        }
+
+        #logo-div {
+            display: flex;
+            width: 50%;
+        }
+
+        #nav-div {
+            margin: 5px;
+            margin-left: 30%;
+            padding: 10px;
+        }
+
+        .nav-links {
+            color: black;
+            font-size: 14px;
+            margin-right: 20px;
+        }
+
+        #back-img1 {
+            height: 550px;
+            position: absolute;
+            margin: 40px 0 0 450px;
+            border-radius: 10px;
+        }
+
+        .form-div {
+            display: block;
+            border: solid 1px rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .block-1 {
+            padding: 14px 16px 8px;
+        }
+
+        .inside-form-div {
+            border-radius: 10px;
+            padding: 14px 16px 8px;
+        }
+
+        #search-form {
+            position: relative;
+        }
+
+        .form-div>p,
+        .inside-form-div>p {
+            margin: 0;
+            font-weight: 900;
+            font-size: 11px;
+            color: black;
+        }
+
+        .inside-form-div:active {
+            border: solid 2px;
+        }
+
+        .block-2 {
+            display: flex;
+        }
+
+        input[type="Submit"] {
+            background: linear-gradient(to right, rgb(255, 30, 111), rgb(212, 0, 116));
+            color: white;
+            font-weight: bold;
+            border: none;
+            border-radius: 8px;
+            padding: 10px 20px;
+            height: 45px;
+            cursor: pointer;
+        }
+
+        .second-div {
+            margin: 650px 100px 0 100px;
+            display: flex;
+        }
+
+        .second-div-title {
+            color: black;
+            font-weight: 800;
+            font-size: 25px;
+            margin: 0 0 10px 0;
+        }
+
+        .second-div-ptag {
+            color: black;
+            font-size: large;
+        }
+
+        .icon-img {
+            height: 30px;
+            padding: 0 0 12px;
+        }
+
+        .inner-second-div {
+            display: grid;
+            padding: 5px;
+            margin-left: 10px;
+            margin: 0 30px;
+            width: 370px;
+        }
+
+        .inner-second-div>h2 {
+            padding: 0 0 5px;
+            margin: 0;
+            font-weight: 700;
+        }
+
+        #third-div {
+            padding: 100px 100px;
+        }
+
+        #inner-third-div {
+            display: flex;
+
+        }
+
+        .inner-image {
+            width: 100%;
+            border-radius: 15px;
+        }
+
+        #inner-third-div>a {
+            width: 33%;
+            padding: 10px;
+            text-decoration: none;
+        }
+
+        a>h3,
+        a>p {
+            margin: 0;
+        }
+
+        a>p {
+            font-size: 13px;
+            font-weight: 600px;
+            color: black;
+        }
+
+        a>h3 {
+            margin: 10px 0 10px 0;
+            font-size: 15px;
+        }
+        #fourth-div{
+            padding: 50px 100px;
+        }
+        #inner-fourth-div{
+            display: flex;
+        }
+        #inner-fourth-div>a>img{
+            height: 300px;
+            border-radius: 15px;
+        }
+        #inner-fourth-div>a{
+            width: 400px;
+            overflow: hidden;
+            color: black;
+        }
+        #inner-fourth-div>a>p{
+            margin: 5px 0 0 0px;
+            color: black;
+            font-size: 15px;
+            font-weight: bold;
+        }
+        #inner-fourth-div>a{
+            text-decoration: none;
+            padding: 10px;
+            font-size: 15px;
+        }
+        #fourth-div>button{
+            width: 180px;
+            height: 50px;
+            padding: 5px;
+            font-size:15px;
+            border-radius: 5px;
+            margin: 20px 0 0 10px;
+            background-color: white;
+        }
+        .anchor-button{
+            width: 200px;
+        }
+        #inner-fourth-div-2{
+            display: grid;
+            grid-template-columns: repeat(4,1fr);
+            grid-template-rows: repeat(3,100px);
+        }
+        #inner-fourth-div-2>a{
+            border: solid 1px rgb(0, 0, 0, 0.2);
+            width: 250px;
+            height: 50px;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 30px 0 0 50px;
+            border-radius: 5px;
+        }
+        #fourth-div:nth-child(3){
+            background-color: rgba(0, 0, 0, 0.2);
+        }
+        #third-div:nth-child(1){
+            margin-top: 0;
+            padding-top: 0;
+        }
+        #second-last-div{
+            margin: 50px 0 0 0;
+            display: flex;
+        }
+        #second-last-div>div{
+            margin: 0 0 0 150px;
+        }
+        .second-div-p{
+           font-size: 20px;
+           color: #000;
+        }
+        #footer{
+            background-color: rgba(0, 0, 0, 0.1);
+            display: grid;
+            grid-template-columns: repeat(10,150px);
+            font-size: small;
+            padding: 30px;
+            margin-top: 100px;
+            text-align: center;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <nav>
+            <div id="logo-div">
+                <img id="logo-img" src="Airbnb_Logo.jpg" alt="">
+                <img id="logo-img" src="Airbnb_Logo_txt.jpg" alt="">
+            </div>
+            <div id="nav-div">
+                <a href="#" class="nav-links">Airbnb your place</a>
+                <a href="" class="nav-links">Sign up</a>
+            </div>
+        </nav>
+    </div>
+    <div id="search-form">
+        <div>
+            <img id="back-img1" src="Back-img1.avif" alt="">
+        </div>
+        <form action="#">
+            <h1>Find places to stay on Airbnb</h1>
+            <p>Discover entire homes and rooms perfect for any trip</p>
+            <div class="form-div block-1">
+                <p>LOCATION</p>
+                <input type="text" placeholder="Anywhere">
+            </div>
+            <div class="form-div block-2">
+                <div class="inside-form-div">
+                    <p>CHECK IN</p>
+                    <input type="date">
+                </div>
+                <hr>
+                <div class="inside-form-div">
+                    <p>CHECK OUT</p>
+                    <input type="date">
+                </div>
+            </div>
+            <div class="form-div block-2">
+                <div class="inside-form-div" style="margin-right: 10px;">
+                    <p>ADULTS</p>
+                    <input type="number" name="adults" id="" value="2">
+                </div>
+                <hr>
+                <div class="inside-form-div" style="margin-left: 10px;">
+                    <p>CHILDREN</p>
+                    <input type="number" name="children" id="" value="0">
+                </div>
+            </div>
+            <div class="form-div" style="padding: 0%;">
+                <input type="submit" value="Search">
+            </div>
+        </form>
+    </div>
+    <div class="second-div">
+        <div class="inner-second-div">
+            <div><img src="flexible-icon.jpeg" alt="" class="icon-img"></div>
+            <p class="second-div-title">Enjoy some flexibility</p>
+            <p class="second-div-ptag">Stays with flexible cancellation make it easy to rebook if your plans change.</p>
+        </div>
+        <div class="inner-second-div">
+            <div><img src="multihome-icon.jpeg" alt="" class="icon-img"></div>
+            <p class="second-div-title">More than 7M active listings</p>
+            <p class="second-div-ptag">Join more than 1 billion guests who’ve found getaways in over 220 countries and
+                destinations.</p>
+        </div>
+        <div class="inner-second-div">
+            <div><img src="filter-icon.jpeg" alt="" class="icon-img"></div>
+            <p class="second-div-title">100+ filters for tailord stays</p>
+            <p class="second-div-ptag">Pick your price range, the number of rooms you want and other key amenities to
+                find the stay that fits your needs.</p>
+        </div>
+    </div>
+    <div id="third-div">
+        <h2>Big, Small, we have it all</h2>
+        <div id="inner-third-div">
+            <a href="">
+                <img class="inner-image" src="Houses-image.avif" alt="">
+                <h3>Houses ></h3>
+                <p>If you need extra space, get an entire place all to yourself.</p>
+            </a>
+            <a href="">
+                <img class="inner-image" src="Flats-image.avif" alt="">
+                <h3>Flats ></h3>
+                <p>Stay in the one of the most convenient locations with spaces in shared building.</p>
+            </a>
+            <a href="">
+                <img class="inner-image" src="Rooms-image.avif" alt="">
+                <h3>Rooms ></h3>
+                <p>Enjoy your own sleeping space and share a common area with others</p>
+            </a>
+        </div>
+    </div>
+    <div id="fourth-div">
+        <div>
+            <h1>Family friendlt stays with full kitchen</h1>
+            <p style="color: black;">Prepare a feast for loved ones in these stays with kitchens and BBQ grills.</p>
+        </div>
+        <div id="inner-fourth-div">
+            <a href="">
+                <img src="home1.jpg" alt="">
+                <p>Home in Kacaamatan, Parongpo</p>
+                Villa W Trinity <br> 9beds <br>1-6 Jun <br>
+                <b>$91,813</b> for 5 nights
+            </a>
+            <a href="">
+                <img src="home2.jpg" alt="">
+                <p>Home in kathu, Thiland</p>
+                *Families * 8 Beds * maids Netflix <br>
+                8 beds <br>
+                1-6 Jun <br>
+                <b>$65,337 </b>for 5 nights
+            </a>
+            <a href="">
+                <img src="home3.jpg" alt="">
+                <p>Home in Konyaalti,Turkey</p>
+                Villa Esiyok Antalya with heated pool
+                <br>14 beds <br>1-6 Jun <br><b>$85,709</b>
+                for 5 nights
+            </a>
+            <a href="">
+                <img src="home4.jpg" alt="">
+                <p>Home in Lonavala, India</p>
+                Villa Esiyok Antalya with heated pool
+                <br>14 beds <br>1-6 Jun <br> <b>$85,709</b>
+                for 5 nights
+            </a>
+        </div>
+        <button>Let's get cooking</button>
+    </div>
+    <div id="fourth-div">
+        <div>
+            <h1>Homes with refereshing pools</h1>
+            <p style="color: black;">Relax with your crew by the pool in stays with 2+ bedrooms..</p>
+        </div>
+        <div id="inner-fourth-div">
+            <a href="">
+                <img src="home5.jpg" alt="">
+                <p>Villa in Borigoan</p>
+                Villa in Bordi <br> Pvt Lawn<br>1-6 Jun <br>
+                <b>$63,813</b> for 5 nights
+            </a>
+            <a href="">
+                <img src="home6.jpg" alt="">
+                <p>Home in Igatpuri</p>
+                %bhk Villa in Igatpuri <br>
+                6 beds <br>
+                1-6 Jun <br>
+                <b>$80,500 </b>for 5 nights
+            </a>
+            <a href="">
+                <img src="home7.jpg" alt="">
+                <p>Villa in Mira Bhiyandar</p>
+                Seaview soriee-vacation Home
+                <br>3 beds <br>8-13 Jun <br><b>$80,455</b>
+                for 5 nights
+            </a>
+            <a href="">
+                <img src="home8.jpg" alt="">
+                <p>Villa in Khanavale</p>
+                Luxary-3BR-AC-Pool-Panvel
+                <br>3 beds <br>1-6 Jun <br> <b>$78,709</b>
+                for 5 nights
+            </a>
+        </div>
+        <button>Keep it chill</button>
+    </div>
+     <div id="fourth-div" >
+        <div>
+            <h1>Homes with refereshing pools</h1>
+            <p style="color: black;">Relax with your crew by the pool in stays with 2+ bedrooms..</p>
+        </div>
+        <div id="inner-fourth-div-2">
+           <a href="" class="anchor-button">Pool ></a>
+           <a href="" class="anchor-button">Free parking ></a>
+           <a href="" class="anchor-button">Washing Machine ></a>
+           <a href="" class="anchor-button">AC ></a>
+           <a href="" class="anchor-button">Fireplace ></a>
+           <a href="" class="anchor-button">TV ></a>
+           <a href="" class="anchor-button">Heating ></a>
+           <a href="" class="anchor-button">Barbaque ></a>
+        </div>
+    </div>
+    <div id="third-div" style="padding-top:0 ;">
+        <div>
+            <h1>Explore 60+ Airbnb Categories</h1>
+            <p style="color: black;">These are just a few collections grouped by style, location and nearby activities.</p>
+        </div>
+        <div id="inner-third-div">
+            <a href="">
+                <img class="inner-image" src="Cabins.avif" alt="">
+                <h3>Cabins ></h3>
+                <p>Cozy hideways close to mother nature.</p>
+            </a>
+            <a href="">
+                <img class="inner-image" src="OMG.avif" alt="">
+                <h3>OMG! ></h3>
+                <p>Find anything from UFO's to submarines.</p>
+            </a>
+            <a href="">
+                <img class="inner-image" src="Beachside.avif" alt="">
+                <h3>Beachfront ></h3>
+                <p>Sought-after properties by the water's edge</p>
+            </a>
+        </div>
+    </div>
+    <div id="second-last-div">
+        <div>
+            <H1>Your questions, answered</H1>
+        </div>
+        <div>
+            <div>
+                <p class="second-div-p">What is Airbnb and how does it work?</p>
+            </div><hr>
+            <div>
+                <p class="second-div-p">How do I use search filters?</p>
+            </div><hr>
+            <div>
+                <p class="second-div-p">Do I need to meet my Host?</p>
+            </div><hr>
+            <div>
+                <p class="second-div-p">What if I need to cancel due to a problem with the listing or Host?</p>
+            </div><hr>
+            <div>
+                <p class="second-div-p">Need more information?</p>
+            </div><hr>
+
+        </div>
+    </div>
+    <div id="footer">
+<div>2025, Airbnb Inc </div> <span> | </span>
+<div>Privacy</div><span> | </span><div>Sitemap</div><span> | </span><div>Company details</div>
+    </div>
+</body>
+
+</html>
