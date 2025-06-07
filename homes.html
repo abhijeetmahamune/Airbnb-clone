@@ -1,0 +1,846 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Airbnb | Hotesls, Rentels, cabins, Beach houses and more</title>
+</head>
+<style>
+    * {
+        font-family: 'Montserrat', sans-serif;
+    }
+
+    #nav-div {
+        margin-bottom: 5%;
+    }
+
+    #first-nav-div {
+        display: flex;
+        margin: 0 50px;
+        padding: 1%;
+    }
+
+    .inner-nav-div-1 {
+        margin-top: 10px;
+    }
+
+    .logo-div {
+        height: 35px;
+    }
+
+    .inner-nav-div-2 {
+        display: flex;
+        margin-left: 28%;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .inner-nav-div-2>a>img {
+        height: 50px;
+        padding: 0;
+    }
+
+    .inner-nav-div-2>a>img:hover {
+
+        transform: scale(1.08);
+        transition: ease 0.5s;
+    }
+
+    .inner-nav-div-2>a {
+        padding: 1% 5%;
+        text-decoration: none;
+        color: rgba(0, 0, 0, 0.6);
+    }
+
+    a {
+        display: flex;
+    }
+
+    .inner-nav-div-3 {
+        margin-left: 110%;
+        display: flex;
+        margin-top: 10px;
+        width: 300px;
+    }
+
+    .inner-nav-div-3>a {
+        padding: 2%;
+        margin: 0 10px;
+        background-color: white;
+    }
+
+    .inner-nav-div-3>a>img {
+        height: 25px;
+        width: 25px;
+        padding: 1%;
+    }
+
+    #host-button {
+        margin-top: 5px;
+        font-size: small;
+        font-weight: bold;
+        text-align: center;
+    }
+
+    #active-section {
+        border-bottom: solid 3px;
+        color: black;
+    }
+
+
+    #second-nav-div {
+        display: flex;
+        margin: 2% 25%;
+        padding: 10px 10px 10px 30px;
+        width: 750px;
+        border-radius: 50px;
+        box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.2);
+    }
+
+    #second-nav-div::before {
+        display: none;
+    }
+
+    #second-nav-div>div>p {
+        font-size: small;
+        padding: 1px;
+        margin: 0;
+    }
+
+    #second-nav-div>div>input {
+        padding: 1px;
+        font-size: 15px;
+        border: none;
+    }
+
+    #search-icon-div {
+        background-color: rgb(255, 0, 123);
+        padding: 1%;
+        border-radius: 50px;
+    }
+
+    .second-div {
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        grid-template-rows: repeat(1, 225px);
+        overflow: hidden;
+    }
+
+    .second-div>a {
+        display: inline;
+        text-decoration: none;
+    }
+
+    .second-div>a>p {
+        margin: 5px 0 0 2px;
+        padding: 0%;
+        color: black;
+        font-size: smaller;
+    }
+
+    .second-div>a>img {
+        width: 180px;
+        height: 180px;
+        object-fit: cover;
+        border-radius: 20px;
+    }
+
+
+
+    .content-div {
+        margin: 2% 5.5%;
+    }
+
+    .content-div>h3 {
+        margin: 0 0 15px 5px;
+        padding: 0%;
+    }
+
+    .secondary-text {
+        color: rgba(0, 0, 0, 0.21);
+    }
+
+    .star {
+        width: 11px;
+        height: 11px;
+        opacity: 50%;
+    }
+
+    .toggel-button {
+        border: none;
+        height: 50px;
+        width: 120px;
+        background: none;
+        font-size: 15px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .toggel-button.active {
+        border-bottom: solid 2px black;
+    }
+
+    .button-section-div {
+        padding: 2% 5%;
+        background-color: rgba(0, 0, 0, 0.02);
+    }
+
+    .div-toggel-button {
+        border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+
+    }
+
+    .buttons-div>a {
+        display: block;
+        margin: 8%;
+        text-decoration: none;
+    }
+
+    .buttons-div>a>h4 {
+        padding: 0;
+        margin: 0%;
+        font-size: 15px;
+        color: black;
+        font-weight: 400;
+    }
+
+    .buttons-div>a>p {
+        padding: 0;
+        margin: 0;
+        font-size: 14px;
+        color: rgba(0, 0, 0, 0.5);
+    }
+
+    .buttons-div {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+    }
+
+    .options-div {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        margin: 3%;
+    }
+
+    .options-div>div>p {
+        font-size: 15px;
+        padding: 0.5%;
+    }
+
+    #footer {
+        background-color: rgba(0, 0, 0, 0.02);
+        display: flex;
+        font-size: small;
+        padding: 1% 2%;
+        margin-top: 100px;
+        text-align: center;
+    }
+
+    #footer>div {
+        margin: 0 0.5%;
+        font-size: 14px;
+        color: #000;
+    }
+
+    .dot {
+        height: 2px;
+        width: 2px;
+        margin-top: 0.6%;
+        background-color: black;
+        border-radius: 50%;
+        display: inline-block;
+    }
+
+    .social-media-div {
+        display: absolute;
+        padding-left: 57%;
+    }
+
+    .social-media-div>img {
+        margin: 0 10px;
+    }
+    .categories-div{
+        display: none;
+    }
+</style>
+<script>
+    function toggleActive(clickedButton) {
+        document.querySelectorAll('.toggel-button').forEach(btn => {
+            btn.classList.remove('active');
+        });
+        clickedButton.classList.add('active');
+    }
+</script>
+
+<body>
+    <div id="nav-div">
+        <div id="first-nav-div">
+            <div class="inner-nav-div-1" onclick="window.open('index.html')">
+                <img class="logo-div" src="Airbnb_Logo.jpg" alt="" srcset="">
+                <img class="logo-div" src="Airbnb_Logo_txt.jpg" alt="">
+            </div>
+            <div class="inner-nav-div-2">
+                <a id="active-section">
+                    <img src="Untitled design (2).png" alt="">
+                    <b>
+                        <p> Homes</p>
+                    </b>
+                </a>
+                <a href="experience.html">
+                    <img src="Untitled design (3).png" alt="">
+                    <p> Experience</p>
+                </a>
+                <a href="service.html">
+                    <img src="Untitled design (4).png" alt="">
+                    <p> Service</p>
+                </a>
+            </div>
+            <nav>
+                <div class="inner-nav-div-3">
+                    <a id="host-button">Become a host</a>
+                    <a><img width="50" height="50" src="https://img.icons8.com/ios/50/internet--v1.png"
+                            alt="internet--v1" /></a>
+                    <a><img width="50" height="50" src="https://img.icons8.com/ios/50/xbox-menu.png"
+                            alt="xbox-menu" /></a>
+                </div>
+            </nav>
+        </div>
+        <div id="second-nav-div">
+            <div>
+                <p>Where</p>
+                <input type="text" name="" id="" placeholder="Search destinations">
+            </div>
+            <hr>
+            <div>
+                <p>Check In</p>
+                <input type="date" name="" id="" placeholder="Add dates">
+            </div>
+            <hr>
+            <div>
+                <p>Check Out</p>
+                <input type="date" name="" id="" placeholder="Add dates">
+            </div>
+            <hr>
+            <div>
+                <p>Who</p>
+                <input type="text" name="" id="" placeholder="Add Guests">
+            </div>
+            <div id="search-icon-div"><img width="20" height="20"
+                    src="https://img.icons8.com/ios-filled/50/FFFFFF/search--v1.png" alt="search--v1" /></div>
+
+        </div>
+    </div>
+    <div id="first-div">
+        <div class="content-div">
+            <h3>Popular places in Pune ></h3>
+            <div class="second-div">
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune.avif" alt="">
+                    <p>Villa in Malavli </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.56</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune2.avif" alt="">
+                    <p>Cottage in Pune </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $10,555 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.88</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune3.avif" alt="">
+                    <p>Flat in Kondhwa </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $5 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 1.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune4.avif" alt="">
+                    <p>Villa at Katraj </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $4,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 5.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune5.avif" alt="">
+                    <p>Flat in Yevlewadi </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $12,000 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 5.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune6.avif" alt="">
+                    <p>House in Swargate </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $10,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.78</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune7.avif" alt="">
+                    <p>House in Nanded </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $9,000 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.01</p>
+                </a>
+            </div>
+        </div>
+        <div class="content-div">
+            <h3>Popular places in North Goa ></h3>
+            <div class="second-div">
+                <a href="">
+                    <img src="NorthGoa1.avif" alt="">
+                    <p>Home in Candolim </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $10,523 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.66</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa2.webp" alt="">
+                    <p>Apartment in Nort Goa </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 5.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa3.avif" alt="">
+                    <p>Flat in Calangute </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.98</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa4.avif" alt="">
+                    <p>Flat in Siolim </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.50</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="northGoa7.avif" alt="">
+                    <p>Cottage in Aroporo </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.60</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa6.avif" alt="">
+                    <p>Villa in Siolim </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.80</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa8.avif" alt="">
+                    <p>House in Calangute </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.86</p>
+                </a>
+            </div>
+        </div>
+
+        <div class="content-div">
+            <h3>Popular places in Pune ></h3>
+            <div class="second-div">
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune.avif" alt="">
+                    <p>Villa in Malavli </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.56</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune2.avif" alt="">
+                    <p>Cottage in Pune </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $10,555 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.88</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune3.avif" alt="">
+                    <p>Flat in Kondhwa </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $5 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 1.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune4.avif" alt="">
+                    <p>Villa at Katraj </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $4,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 5.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune5.avif" alt="">
+                    <p>Flat in Yevlewadi </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $12,000 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 5.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune6.avif" alt="">
+                    <p>House in Swargate </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $10,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.78</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune7.avif" alt="">
+                    <p>House in Nanded </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $9,000 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.01</p>
+                </a>
+            </div>
+        </div>
+        <div class="content-div">
+            <h3>Popular places in North Goa ></h3>
+            <div class="second-div">
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa1.avif" alt="">
+                    <p>Home in Candolim </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $10,523 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.66</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa2.webp" alt="">
+                    <p>Apartment in Nort Goa </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 5.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa3.avif" alt="">
+                    <p>Flat in Calangute </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.98</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa4.avif" alt="">
+                    <p>Flat in Siolim </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.50</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="northGoa7.avif" alt="">
+                    <p>Cottage in Aroporo </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.60</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa6.avif" alt="">
+                    <p>Villa in Siolim </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.80</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa8.avif" alt="">
+                    <p>House in Calangute </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.86</p>
+                </a>
+            </div>
+        </div>
+        <div class="content-div">
+            <h3>Popular places in Pune ></h3>
+            <div class="second-div">
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune.avif" alt="">
+                    <p>Villa in Malavli </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.56</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune2.avif" alt="">
+                    <p>Cottage in Pune </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $10,555 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.88</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune3.avif" alt="">
+                    <p>Flat in Kondhwa </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $5 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 1.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune4.avif" alt="">
+                    <p>Villa at Katraj </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $4,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 5.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune5.avif" alt="">
+                    <p>Flat in Yevlewadi </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $12,000 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 5.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune6.avif" alt="">
+                    <p>House in Swargate </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $10,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.78</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/Pune/homes">
+                    <img src="FlatPune7.avif" alt="">
+                    <p>House in Nanded </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $9,000 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.01</p>
+                </a>
+            </div>
+        </div>
+        <div class="content-div">
+            <h3>Popular places in North Goa ></h3>
+            <div class="second-div">
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa1.avif" alt="">
+                    <p>Home in Candolim </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $10,523 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.66</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa2.webp" alt="">
+                    <p>Apartment in Nort Goa </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 5.0</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa3.avif" alt="">
+                    <p>Flat in Calangute </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.98</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa4.avif" alt="">
+                    <p>Flat in Siolim </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.50</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="northGoa7.avif" alt="">
+                    <p>Cottage in Aroporo </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.60</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa6.avif" alt="">
+                    <p>Villa in Siolim </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.80</p>
+                </a>
+                <a href="https://www.airbnb.co.in/s/South-Goa/homes">
+                    <img src="NorthGoa8.avif" alt="">
+                    <p>House in Calangute </p>
+                    <p class="secondary-text" style="color: rgba(0, 0, 0, 0.6); font-size: 11px; margin-top: 0%;">
+                        $14,222 for 3 nights <img class="star"
+                            src="https://img.icons8.com/fluency-systems-filled/48/star.png"" alt=" star--v1" /> 4.86</p>
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="button-section-div">
+        <h2>Inspiration for future getaways</h2>
+        <div class="div-toggel-button">
+            <button class="toggel-button" onclick="toggleActive(this)">Unique stays</button>
+            <button class="toggel-button" onclick="toggleActive(this)">Categories</button>
+        </div>
+        <div class="buttons-div">
+            <a href="">
+                <h4 class="button-title">Yurt Rentels</h4>
+                <p>United States</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Yurt Rentels</h4>
+                <p>United Kingdom</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Castle Rentels</h4>
+                <p>United States</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Houseboats</h4>
+                <p>United States</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Holiday Caravans</h4>
+                <p>United Kingdom</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Private Island Rentels</h4>
+                <p>United States</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Farm Houses</h4>
+                <p>United States</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Farm Cottages</h4>
+                <p>United Kingdom</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Cabin Rentels</h4>
+                <p>Australia</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Luxary Cabins</h4>
+                <p>United States</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Luxary Cabins</h4>
+                <p>United Kingdom</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Holiday Chalents</h4>
+                <p>United Kingdom </p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Cottage Rentels</h4>
+                <p>United States</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Holiday Cottages</h4>
+                <p>United Kingdom</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Mansion Rentels</h4>
+                <p>United States</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Villa Rentels</h4>
+                <p>United Kingdom</p>
+            </a>
+            <a href="">
+                <h4 class="button-title">Hoilday Banglows</h4>
+                <p>United Kingdom</p>
+            </a>
+        </div>
+        <div class="buttons-div categories-div">
+            <a href="">
+                <h4 class="button-title">Amazing pools</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Arctic</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Camping</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Camper vans</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Castles</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Containers</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Countryside</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Design</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Earth homes</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Farms</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">National parks</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Vineyards</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">OMG!</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Tiny homes</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Towers</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Windmills</h4>
+            </a>
+            <a href="">
+                <h4 class="button-title">Luxe</h4>
+            </a>
+
+        </div>
+    </div>
+    <div class="options-div">
+        <div>
+            <b>
+                <p>Support</p>
+            </b>
+            <p>Help Center</p>
+            <p>AirCover</p>
+            <p>Anti-discrimination</p>
+            <p>Disability support</p>
+            <p>Cancellation options</p>
+            <p>Report neighbourhood concern</p>
+        </div>
+        <div>
+            <b>
+                <p>Hosting</p>
+            </b>
+            <p>Airbnb your home</p>
+            <p>AirCover for Hosts</p>
+            <p>Hosting resources</p>
+            <p>Community forum</p>
+            <p>Hosting responsibility</p>
+            <p>Join a free Hosting class</p>
+            <p>Find a co-host</p>
+        </div>
+        <div>
+            <b>
+                <p>Airbnb</p>
+            </b>
+            <p>2025 Summer Release</p>
+            <p>Newsroom</p>
+            <p>New features</p>
+            <p>Careers</p>
+            <p>Investors</p>
+            <p>Airbnb.org emergency stays</p>
+        </div>
+    </div>
+    <div id="footer">
+        <div><img width="10" height="10" style="padding-right: 4px ;"
+                src="https://img.icons8.com/metro/26/copyright.png" alt="copyright" />2025, Airbnb Inc </div> <span
+            class="dot"></span>
+        <div>Privacy</div> <span class="dot"></span>
+        <div>Terms</div> <span class="dot"></span>
+        <div>Sitemap</div> <span class="dot"></span>
+        <div>Company details</div>
+        <div class="social-media-div">
+            <img width="18" height="18" src="https://img.icons8.com/ios-filled/50/facebook-new.png"
+                alt="facebook-new" />
+            <img width="18" height="18" src="https://img.icons8.com/ios/50/twitterx--v2.png" alt="twitterx--v2" />
+            <img width="18" height="18" src="https://img.icons8.com/ios/50/instagram-new--v1.png"
+                alt="instagram-new--v1" />
+        </div>
+    </div>
+
+</body>
+
+</html>
